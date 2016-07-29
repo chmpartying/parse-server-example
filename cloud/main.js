@@ -3,6 +3,20 @@ Parse.Cloud.define('hello', function (req, res) {
   res.success('Hello');
 });
 
+
+Parse.Cloud.define('deleteAllSessions', function (req, res) {
+    var query = new Parse.Query("Sessions");
+    query.find({
+        success: function(results) {
+            results.destroyAll();
+            res.success();
+        },
+        error: function(results) {
+            res.error("Error in deleting all sessions");
+        }
+    });
+});
+
 Parse.Cloud.beforeSave('Events', function (req, res) {
 
     var badWords = ['merde', 'bite'];

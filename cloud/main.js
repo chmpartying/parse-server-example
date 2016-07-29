@@ -11,9 +11,11 @@ Parse.Cloud.beforeSave('Events', function (req, res) {
     var title = req.object.get('title');
 
     for (var i=0; i < badWords.length; i++) {
-        if (title.indexOf(badWords[i]) != -1)
+        var word = badWords[i]
+        if (title.indexOf(word) != -1) {
             check = false;
-            detectedWord = badWords[i];
+            detectedWord = word;
+        }
     }
 
     if (check == false) {

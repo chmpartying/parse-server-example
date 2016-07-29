@@ -1,6 +1,6 @@
 
 Parse.Cloud.define('hello', function(req, res) {
-  res.success('Hi');
+  res.success('Hello');
 });
 
 Parse.Cloud.beforeSave('Events', function(req, res) {

@@ -1,9 +1,9 @@
 
-Parse.Cloud.define('hello', function(req, res) {
+Parse.Cloud.define('hello', function (req, res) {
   res.success('Hello');
 });
 
-Parse.Cloud.beforeSave('Events', function(req, res) {
+Parse.Cloud.beforeSave('Events', function (req, res) {
 
     var badWords = ['merde', 'bite'];
     var check = true;
@@ -17,8 +17,8 @@ Parse.Cloud.beforeSave('Events', function(req, res) {
         }
     }
 
-    if (check = false) {
-        res.error("You cannot create an event with the title: " + detectedWord);
+    if (check == false) {
+        res.error("You cannot create an event with the title: " + detectedWord)
     } else {
         res.success();
     }

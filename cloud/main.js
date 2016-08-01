@@ -19,7 +19,8 @@ Parse.Cloud.define('deleteAllSessions', function (req, res) {
 
 Parse.Cloud.beforeSave('Events', function (req, res) {
 
-    var badWords = ['merde', 'bite'];
+    // CASE SENSITIVE => A MODIFIER
+    var badWords = ['merde', 'bite', 'luca', 'nigga', 'cul', 'caca', 'pénis', 'uretre', 'vagin', 'penis', 'pd'];
     var check = true;
     var detectedWord = "";
     var title = req.object.get('title');
